@@ -1,0 +1,12 @@
+# - name: Sample
+#   hosts: all
+#   tasks:
+#     - name: print hello world
+#       ansible.
+
+- name: Sample
+  hosts: all
+  tasks: 
+    - name: print hello world
+      ansible.builtin.debug:
+        msg: hello-world
