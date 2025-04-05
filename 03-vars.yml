@@ -23,5 +23,5 @@
 - name: role varibales
   hosts: localhost
   connection: local
-  tasks:
+  roles:
     - demo
