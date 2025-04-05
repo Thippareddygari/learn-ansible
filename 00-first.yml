@@ -1,0 +1,8 @@
+---
+- name: Sample
+  hosts: loaclhost
+  connection: local
+  tasks:
+    - name: print hello world
+      ansible.builtin.debug:
+        msg: "Hello world"
