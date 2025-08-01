@@ -1,0 +1,29 @@
+- name: play variables
+  hosts: localhost
+  connection: local
+  vars:
+    URL: "play.google.com"
+  tasks:
+    - name: print url 
+      ansible.builtin.debug:
+        msg: "{{ URL }}"
+#In ansible we can access variable with {{ variable_name }}
+#key: "{{ val }}"
+#key: "{{ val }} some other thing"
+#key: some {{ val }} #this does not require qiotes
+
+- name: Task variables 
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: print url
+      vars:
+        URL: "task.google.com"
+      ansible.builtin.debug:
+        msg: "{{ URL }}"
+
+- name: role variables
+  hosts: localhost
+  connection: local
+  roles:
+    - role: demo
