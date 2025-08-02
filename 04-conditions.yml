@@ -1,0 +1,12 @@
+- name: condition demo
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: x is greater than 10
+      ansible.builtin.debug:
+        msg: "x is greater than 10"
+    
+    - name: x is less than or equal to 10
+      ansible.builtin.debug:
+        msg: "x is less than or equal to 10"
+      
