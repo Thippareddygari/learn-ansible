@@ -68,3 +68,15 @@
     - name: print a fact 
       ansible.builtin.debug:
         msg: "{{ ansible_distribution }} is the distribution name of the system"
+  
+
+- name: variable from task output
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Run uptime command
+      ansible.builtin.command: uptime
+      register: uptime_output
+    - name: Print uptime output
+      ansible.builtin.debug:
+        msg: "Uptime is: {{ uptime_output.stdout }}"
