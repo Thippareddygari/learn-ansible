@@ -1,0 +1,11 @@
+- name: Template for a simple task
+  hosts: localhost
+  tasks:
+    - name: Print a message
+      debug:
+        msg: "This is a simple task in a template file."
+      
+    - name: Create a file with content
+      copy:
+        dest: example.txt
+        content: "This is an example file created by Ansible."
