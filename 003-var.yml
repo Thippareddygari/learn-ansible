@@ -27,3 +27,44 @@
   connection: local
   roles:
     - role: demo
+
+#form commonad lne we can set variables
+#1.cli vaibles
+#2.Taks variables
+#3.role variables
+#4.Play variables
+
+
+#variables are now three types
+
+#1. Normal variables
+#vars:
+#  URL: example.com
+
+#2 List variables
+#vars:
+#  URLs:
+#    - example.com
+#    - example2.com
+
+#Map variables
+#vars:
+#  URLS:  
+# app1: app1.com
+# app2: app2.com
+
+#variables also data types
+#1. String
+#2 Number
+#3 Boolean yes/no True/False
+
+#user defined variables where as ansible determines the system config and make those variables availables for you to use.
+#those variables are called facts
+
+- name: print a fact
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: print a fact 
+      ansible.builtin.debug:
+        msg: "{{ ansible_distribution }} is the distribution name of the system"
