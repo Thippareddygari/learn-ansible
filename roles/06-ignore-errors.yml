@@ -1,0 +1,12 @@
+- name: Tags
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: shell 
+    ansible.builtin.shell: cat /etc/passwd | grep omnandha
+    register: result
+  
+  - name: debug
+    ansible.builtin.debug:
+      msg: "Omnandha user is not there in system"
+    when: result.stdout == ""
