@@ -6,4 +6,4 @@
   tasks:
     - name: print name
       ansible.builtin.debug:
-        msg: "name is {{ name | title}}"
+        msg: "name is {{ name | title }}"
