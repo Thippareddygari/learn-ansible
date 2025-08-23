@@ -1,0 +1,9 @@
+- name: Title check
+  hosts: localhost
+  connection: local
+  vars:
+    name: "john"
+  tasks:
+    - name: print name
+      ansible.builtin.debug:
+        msg: "name is {{ name | title}}"
